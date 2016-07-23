@@ -1,0 +1,119 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Credit / Debit Card Form</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../buttons/buttons.css">
+    <link rel="stylesheet" href="forms.css">
+
+</head>
+
+<body class="card-form">
+
+<div class="prev-next">
+    <a href="scheduling-form.html" ><div class="fa fa-long-arrow-left"></div> Previous</a>
+    <a href="../index.html" >Back to Homepage</a>
+    <a href="signup-form.html" >Next <div class="fa fa-long-arrow-right"></div></a>
+</div>
+
+<div class="main">
+
+    <div class="form-wrapper">
+
+        <h3 class="main-title">Payment Details</h3>
+
+        <form>
+            <div>
+                <label>Card holder's full name: </label>
+                <div class="help-input">(As written on the card)</div>
+                <div class="input-group">
+                    <input type="text" class="input-form" placeholder="Enter your full name">
+                </div>
+
+                <div class="number-csv-wrapper">
+                    <div class="card-number-wrapper">
+                        <label>Card number: </label>
+                        <div class="help-input">(Maximum 19 numbers)</div>
+                        <div class="input-group">
+                            <input type="number" min="0" max="19" class="input-form">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label>CSV code: </label>
+                        <div class="help-input">(The three digits on the back of your card)</div>
+                        <div class="input-group">
+                            <input type="number" min="0" max="19" class="input-form">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clearfix"></div>
+
+                <div class="expiration-wrapper">
+                    <label>Expiration date: </label>
+                    <div class="input-group">
+
+                        <div class="select-dropdown">
+                            <select name="month" id="month" onchange="" size="1">
+                                <option value="01" selected="selected">January</option>
+                                <option value="02">February</option>
+                                <option value="03">March</option>
+                                <option value="04">April</option>
+                                <option value="05">May</option>
+                                <option value="06">June</option>
+                                <option value="07">July</option>
+                                <option value="08">August</option>
+                                <option value="09">September</option>
+                                <option value="10">October</option>
+                                <option value="11">November</option>
+                                <option value="12">December</option>
+                            </select>
+                            <i class="fa fa-angle-down fa-lg"></i>
+                        </div>
+
+                        <div class="select-dropdown">
+                            <select name="year" id="year" onchange="" size="1">
+                                <option value="01" selected="selected">2016</option>
+                                <option value="02">2017</option>
+                                <option value="03">2018</option>
+                                <option value="04">2019</option>
+                                <option value="05">2020</option>
+                                <option value="06">2021</option>
+                                <option value="07">2022</option>
+                                <option value="08">2023</option>
+                                <option value="09">2024</option>
+                                <option value="10">2025</option>
+                                <option value="11">2026</option>
+                                <option value="12">2027</option>
+                                <option value="12">2028</option>
+                                <option value="12">2029</option>
+                                <option value="12">2030</option>
+                                <option value="12">2031</option>
+                            </select>
+                            <i class="fa fa-angle-down fa-lg"></i>
+                         </div>
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button class="button button-md button-cancel">Cancel</button>
+                    <button type="submit" class="button button-md button-card">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+</body>
+</html>
