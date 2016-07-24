@@ -110,6 +110,10 @@ select{
     background-color: transparent;
 }
 
+legend {
+    padding-bottom: 2em;
+}
+
 /****** CHECKBOX AND RADIO BUTTONS STYLING ******/
 
 /* Base for label styling */
