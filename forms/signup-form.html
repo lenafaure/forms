@@ -27,37 +27,37 @@
 
     <div class="main">
 
-        <div class="form-wrapper man-of-steel">
+        <div class="form-wrapper">
 
             <h3 class="main-title">Signup Form</h3>
 
-            <form>
+            <form id="signup">
                 <div>
 
                     <div class="input-group">
-                        <label for="form-input-1">Your First Name</label>
-                        <input type="text" class="input-form" id="form-input-1" placeholder="Enter your first name">
+                        <label for="input-first-name">Your First Name</label>
+                        <input type="text" class="input-form" id="input-first-name" placeholder="Enter your first name" required>
                     </div>
 
                     <div class="input-group">
-                        <label for="form-input-2">Your Last Name</label>
-                        <input type="text" class="input-form" id="form-input-2" placeholder="Enter your last name">
+                        <label for="input-last-name">Your Last Name</label>
+                        <input type="text" class="input-form" id="input-last-name" placeholder="Enter your last name" required>
                     </div>
 
                     <div class="input-group">
                         <label>Your email</label>
-                        <input type="email" class="input-form" placeholder="Enter your email">
+                        <input type="text" class="input-form" id="input-email" placeholder="Enter your email" required>
                         <span class="help-input">Enter a valid email adress.</span>
                     </div>
 
                     <div class="input-group">
                         <label>Your date of birth</label>
-                        <input type="date" class="input-form" placeholder="Enter your date of birth">
+                        <input type="date" class="input-form" placeholder="Enter your date of birth" required>
                     </div>
 
                     <div class="input-group">
                         <label>Your password</label>
-                        <input type="password" class="input-form" placeholder="Enter your password">
+                        <input type="password" class="input-form" placeholder="Enter your password" required>
                         <span class="help-input">Password must have at least 5 letters and a special character</span>
                     </div>
 
@@ -91,5 +91,7 @@
 
     </div>
 
+<script src="../js/validator.js"></script>
+<script src="../js/main.js"></script>
 </body>
 </html>

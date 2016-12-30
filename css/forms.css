@@ -1,5 +1,6 @@
 body.signup-form {
-    background: linear-gradient(#061161, #780206);
+    background:  url(../img/signup_background.jpg) no-repeat center center fixed;
+    background-size: cover;
 }
 
 body.search-form {
@@ -52,6 +53,11 @@ h3.main-title {
     border-bottom: 1px solid #eee;
     text-transform: uppercase;
     color: #72757e;
+}
+
+.signup-form .main {
+    background-color: rgba(255,255,255, 0.9);
+    border-radius: 4px;
 }
 
 .login-form .main {
@@ -113,6 +119,7 @@ select{
 legend {
     padding-bottom: 2em;
 }
+
 
 /****** CHECKBOX AND RADIO BUTTONS STYLING ******/
 
@@ -310,7 +317,18 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 .signup-form .input-form:focus {
-    border-bottom: 2px solid #061161;
+    border-bottom: 2px solid #009de0;
+    color: #009de0;
+}
+
+.signup-form .valid{
+    color: #4fc32c;
+    border-bottom: 2px solid #4fc32c;
+}
+
+.signup-form .input-form.valid:focus {
+    border-bottom: 2px solid #4fc32c;
+    color: #4fc32c;
 }
 
 .signup-form .help-input, .signup-form h3 {

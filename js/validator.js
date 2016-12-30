@@ -10,7 +10,8 @@
 (function(window){
 
     var validator = {};
-
+    window.validator = validator;
+    
     /* .isFalse(input) */
 
     validator.isFalse = function(input){
