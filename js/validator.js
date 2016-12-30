@@ -19,8 +19,7 @@
         return (input === "" ||
                 typeof input == "undefined" ||
                 input === null ||
-                input === false ||
-                this.isEmpty(input)
+                input === false
         );
     }
 
