@@ -7,15 +7,13 @@
  *
  */
 
-(function(window){
+var validator = (function(){
 
-    var validator = {};
-    window.validator = validator;
-    
-    /* .isFalse(input) */
+    // #1: 'isFalse(input)'
+    //
+    // Checks if the input parameter is not blank or a falsy value
 
-    validator.isFalse = function(input){
-        // check if input is blank or is a falsy value
+     function isFalse(input){
         return (input === "" ||
                 typeof input == "undefined" ||
                 input === null ||
@@ -24,9 +22,11 @@
     }
 
 
-    /* .isEmpty(input) */
+    // #2: 'isEmpty(input)'
+    //
+    // Checks if the input paramater is an empty string
 
-    validator.isEmpty = function(input){
+    function isEmpty(input){
         if(typeof input === 'string' && input.trim() == ""){
             return true;
         }
@@ -36,9 +36,12 @@
     }
 
 
-    /* .isAlphanumeric(input) */
+    // #3: 'isAlphanumeric(input)'
+    //
+    // Checks if the input parameter consists of only alphanumeric characters:
+    // a-z, A-Z and 0-9
 
-    validator.isAlphanumeric = function(input) {
+     function isAlphanumeric(input) {
         var alphaNumeric = "abcdefghijklmnopqrstuvwxyz0123456789";
 
         for (i = 0; i <= input.length-1; i++){
@@ -50,9 +53,12 @@
         return true;
     }
 
-    /* .isEmailAddress(input) */
+    // #4: 'isEmailAddress(input)'
+    //
+    // Checks if the input parameter is an email address with two strings separated by
+    // an @ symbol, and a domain name after a dot at the end of the second string
 
-    validator.isEmailAddress = function(input) {
+    function isEmailAddress(input) {
         // check for empty or undefined parameter
         if(this.isFalse(input)) {
             return false;
@@ -86,9 +92,14 @@
     };
 
 
-    /* .isPhoneNumber(input) */
+    // #5: 'isPhoneNumber(input)'
+    //
+    // Checks if the input parameter is a phone number, i.e follows the appropriate
+    // phone number format. In france the format is:
+    // - a 0 at the beginning of the phone number
+    // - 10 digits separated by a white space
 
-    validator.isPhoneNumber = function(input) {
+     function isPhoneNumber(input) {
         // check for empty or undefined parameter
         if(this.isFalse(input)) {
             return false;
@@ -133,9 +144,12 @@
     };
 
 
-    /* .withoutSymbols(input) */
+    // #6: 'withoutSymbols(input)'
+    //
+    // Returns the input parameter with all non-alphanumeric characters removed,
+    // ignoring spaces
 
-    validator.withoutSymbols = function(input) {
+    function withoutSymbols(input) {
         var characters = " abcdefghijklmnopqrstuvwxyz0123456789";
         var noSymbols = [];
 
@@ -157,9 +171,11 @@
     }
 
 
-    /* .isDate(input) */
+    // #7: 'isDate(input)'
+    //
+    // Checks if the input parameter is a valid date
 
-    validator.isDate = function(input) {
+    function isDate(input) {
         // check for empty or undefined parameter
         if(this.isFalse(input)) {
             return false;
@@ -176,9 +192,11 @@
     }
 
 
-    /* .isBeforeDate(input, reference) */
+    // #8: 'isBeforeDate(input, reference)'
+    //
+    // Checks if the input date is before the reference date
 
-    validator.isBeforeDate = function(input, reference) {
+    function isBeforeDate(input, reference) {
         // check if input is a date
         if( !this.isDate(input) || !this.isDate(reference)) {
             return false;
@@ -193,9 +211,11 @@
         }
     }
 
-    /* .isAfterDate(input, reference) */
+    // #9: 'isAfterDate(input, reference)'
+    //
+    // Checks if the input date is after the reference date
 
-    validator.isAfterDate = function(input, reference) {
+    function isAfterDate(input, reference) {
         // check if input is a date
         if( !this.isDate(input) || !this.isDate(reference)) {
             return false;
@@ -211,9 +231,11 @@
         }
     }
 
-    /* .isBeforeToday(input) */
+    // #10: 'isBeforeToday(input)'
+    //
+    // Checks if the input date is before the current date
 
-    validator.isBeforeToday = function(input) {
+    function isBeforeToday(input) {
         var today = new Date();
 
         // check if input is a date
@@ -230,9 +252,11 @@
         }
     }
 
-    /* .isAfterToday(input) */
+    // #11: 'isAfterToday(input)'
+    //
+    // Checks if the input date is after the current date
 
-    validator.isAfterToday = function(input) {
+    function isAfterToday(input) {
         var today = new Date();
 
         // check if input is a date
@@ -250,9 +274,11 @@
     }
 
 
-    /* .contains(input, words) */
+    // #12: 'contains(input, words)'
+    //
+    // Checks if the input contains one or more words within the words array
 
-    validator.contains = function(input, words) {
+    function contains(input, words) {
         var alphaNumeric = "abcdefghijklmnopqrstuvwxyz0123456789";
         var splitCharacters = [];
         var result = [];
@@ -297,9 +323,11 @@
         }
     }
 
-    /* .lacks(input, words) */
+    // #13: 'lacks(input, words)'
+    //
+    // Checks if the input does not contains any of the words within the words array
 
-    validator.lacks = function(input, words) {
+    function lacks(input, words) {
         var alphaNumeric = "abcdefghijklmnopqrstuvwxyz0123456789";
         var splitCharacters = [];
         var result = [];
@@ -344,9 +372,11 @@
         }
     }
 
-    /* .isComposedOf(input, strings) */
+    // #14: 'isComposedOf(input, strings)'
+    //
+    // Checks if input contains only strings found in the strings array
 
-    validator.isComposedOf = function(input, strings) {
+    function isComposedOf(input, strings) {
         var inputCaseInsensitive = input.toLowerCase();
         var alphaNumeric = "abcdefghijklmnopqrstuvwxyz0123456789";
         var result = [];
@@ -391,9 +421,11 @@
     }
 
 
-    /* .isLength(input, n) */
+    // #15: 'isLength(input, n)'
+    //
+    // Checks if the length of the input string is less than or equal to the parameter n
 
-    validator.isLength = function(input, n) {
+    function isLength(input, n) {
         // check for empty or undefined parameters
         if(this.isFalse(input) || this.isFalse(n)) {
             return false;
@@ -408,9 +440,11 @@
     }
 
 
-    /* .isOfLength(input, n) */
+    // #16: 'isOfLength(input, n)'
+    //
+    // Checks if the length of the input string is greater or equal to the parameter n
 
-    validator.isOfLength = function(input, n) {
+    function isOfLength(input, n) {
         // check for empty or undefined parameters
         if(this.isFalse(input) || this.isFalse(n)) {
             return false;
@@ -424,9 +458,11 @@
         }
     }
 
-    /* .countWords(input) */
+    // #17: 'countWords(input)'
+    //
+    // Counts the number of words in the input parameter
 
-    validator.countWords = function(input) {
+    function countWords(input) {
         var alphaNumeric = "abcdefghijklmnopqrstuvwxyz0123456789";
         var splitCharacters = [];
         var count = 0;
@@ -458,9 +494,11 @@
         return count;
     }
 
-    /* .lessWordsThan(input, n) */
+    // #18: 'lessWordsThan(input, n)'
+    //
+    // Checks if the input string has a word count less than or equal to the parameter n
 
-    validator.lessWordsThan = function(input, n) {
+    function lessWordsThan(input, n) {
         var alphaNumeric = "abcdefghijklmnopqrstuvwxyz0123456789";
         var splitCharacters = [];
         var count = 0;
@@ -498,9 +536,11 @@
         }
     }
 
-    /* .moreWordsThan(input, n) */
+    // #19: 'moreWordsThan(input, n)'
+    //
+    // Checks if the input string has a word count greater or equal to the parameter n
 
-    validator.moreWordsThan = function(input, n) {
+    function moreWordsThan(input, n) {
         var alphaNumeric = "abcdefghijklmnopqrstuvwxyz0123456789";
         var splitCharacters = [];
         var count = 0;
@@ -538,9 +578,11 @@
         }
     }
 
-    /* .isBetween(input, floor, ceil) */
+    // #20: 'isBetween(input, floor, ceil)'
+    //
+    // Checks if the input parameter is between floor and ceil values, including them
 
-    validator.isBetween = function(input, floor, ceil) {
+    function isBetween(input, floor, ceil) {
         // check for empty or undefined parameters
         if(this.isFalse(input) || this.isFalse(floor) || this.isFalse(ceil)) {
             return false;
@@ -556,9 +598,11 @@
     }
 
 
-    /* .isCreditCard(input) */
+    // #21: 'isCreditCard(input)'
+    //
+    // Checks if input parameter is a credit card number
 
-    validator.isCreditCard = function(input) {
+    function isCreditCard(input) {
         // check for empty or undefined parameters
         if(this.isFalse(input)) {
             return false;
@@ -582,9 +626,11 @@
         }
     }
 
-    /* .isHex(input) */
+    // #22: 'isHex(input)'
+    //
+    // Checks if the input string is an hexadecimal color
 
-    validator.isHex = function(input) {
+    function isHex(input) {
         var hexadecimal = "abcdef0123456789";
         var result = [];
 
@@ -626,9 +672,11 @@
         }
     }
 
-    /* .isRGB(input) */
+    // #23: 'isRGB(input)'
+    //
+    // Checks if the input strig is an RGB color
 
-    validator.isRGB = function(input) {
+    function isRGB(input) {
         var beginString = input.substring(0,4).toLowerCase();
         var endString = input.substring(input.length -1).toLowerCase();
         var trimmedNumbers = [];
@@ -672,9 +720,11 @@
     }
 
 
-    /* .isHSL(input) */
+    // #24: 'isHSL(input)'
+    //
+    // Checks if the input string is an HSL color
 
-    validator.isHSL = function(input) {
+    function isHSL(input) {
         var beginString = input.substring(0,4).toLowerCase();
         var endString = input.substring(input.length -1).toLowerCase();
         var trimmedNumbers = [];
@@ -719,9 +769,11 @@
     }
 
 
-    /* .isColor(input)  */
+    // #25: 'isColor(input)'
+    //
+    // Checks if the input is an Hexadecimal, an RGB or an HSL color
 
-    validator.isColor = function(input) {
+    function isColor(input) {
         // check for empty or undefined parameters
         if(this.isFalse(input)) {
             return false;
@@ -739,9 +791,12 @@
     }
 
 
-    /* .isTrimmed(input) */
+    // #26: 'isTrimmed(input)'
+    //
+    // Checks if the input string has leading or trailing whitespaces or
+    // more than one whitespace between the words
 
-    validator.isTrimmed = function(input) {
+    function isTrimmed(input) {
         // check for empty or undefined parameters
         if(this.isFalse(input)) {
             return false;
@@ -759,6 +814,35 @@
         return true;
     }
 
-})(window);
+    return{
+        isFalse: isFalse,
+        isEmpty: isEmpty,
+        isAlphanumeric: isAlphanumeric,
+        isEmailAddress: isEmailAddress,
+        isPhoneNumber: isPhoneNumber,
+        withoutSymbols: withoutSymbols,
+        isDate: isDate,
+        isBeforeDate: isBeforeDate,
+        isAfterDate: isAfterDate,
+        isBeforeToday: isBeforeToday,
+        isAfterToday: isAfterToday,
+        contains: contains,
+        lacks: lacks,
+        isComposedOf: isComposedOf,
+        isLength: isLength,
+        isOfLength: isOfLength,
+        countWords: countWords,
+        lessWordsThan: lessWordsThan,
+        moreWordsThan: moreWordsThan,
+        isBetween: isBetween,
+        isCreditCard: isCreditCard,
+        isHex: isHex,
+        isRGB: isRGB,
+        isHSL: isHSL,
+        isColor: isColor,
+        isTrimmed: isTrimmed
+    }
+
+})();
 
 
