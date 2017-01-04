@@ -427,6 +427,10 @@ input[type="range"]::-webkit-slider-thumb {
     margin: 0;
 }
 
+.questionnaire-form label {
+    cursor: pointer;
+}
+
 .questionnaire-form  .input-radio:nth-child(odd) {
     background-color: #eee;
 }
@@ -535,6 +539,10 @@ input[type="range"]::-webkit-slider-thumb {
 .shipping-billing-form .valid{
     color: #4fc32c;
     border: 1px solid #4fc32c;
+}
+
+.shipping-billing-form #billing-wrapper input:disabled{
+    color: #999999;
 }
 
 .color-building-form .range-sliders-wrapper {
