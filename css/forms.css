@@ -703,3 +703,11 @@ input[type="range"]::-webkit-slider-thumb {
     cursor: pointer;
 }
 
+.card-form .input-form.valid:focus {
+    color: #4fc32c;
+}
+
+.card-form .valid{
+    color: #4fc32c;
+}
+

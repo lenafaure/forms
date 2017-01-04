@@ -35,15 +35,15 @@
                 <label>Card holder's full name: </label>
                 <div class="help-input">(As written on the card)</div>
                 <div class="input-group">
-                    <input type="text" class="input-form" placeholder="Enter your full name">
+                    <input type="text" class="input-form" id="input-full-name" placeholder="Enter your full name" required>
                 </div>
 
                 <div class="number-csv-wrapper">
                     <div class="card-number-wrapper">
                         <label>Card number: </label>
-                        <div class="help-input">(Maximum 19 numbers)</div>
+                        <div class="help-input">(16 characters)</div>
                         <div class="input-group">
-                            <input type="number" min="0" max="19" class="input-form">
+                            <input type="text" id="input-credit-card" class="input-form" required>
                         </div>
                     </div>
 
@@ -51,7 +51,7 @@
                         <label>CSV code: </label>
                         <div class="help-input">(The three digits on the back of your card)</div>
                         <div class="input-group">
-                            <input type="number" min="0" max="19" class="input-form">
+                            <input type="text" id="input-csv-code" class="input-form" required>
                         </div>
                     </div>
                 </div>
@@ -63,41 +63,41 @@
                     <div class="input-group">
 
                         <div class="select-dropdown">
-                            <select name="month" id="month" onchange="" size="1">
-                                <option value="01" selected="selected">January</option>
-                                <option value="02">February</option>
-                                <option value="03">March</option>
-                                <option value="04">April</option>
-                                <option value="05">May</option>
-                                <option value="06">June</option>
-                                <option value="07">July</option>
-                                <option value="08">August</option>
-                                <option value="09">September</option>
-                                <option value="10">October</option>
-                                <option value="11">November</option>
-                                <option value="12">December</option>
+                            <select name="month" id="select-month" onchange="" size="1">
+                                <option value="January">January</option>
+                                <option value="February">February</option>
+                                <option value="March">March</option>
+                                <option value="April">April</option>
+                                <option value="May">May</option>
+                                <option value="June">June</option>
+                                <option value="July">July</option>
+                                <option value="August">August</option>
+                                <option value="September">September</option>
+                                <option value="October">October</option>
+                                <option value="November">November</option>
+                                <option value="December">December</option>
                             </select>
                             <i class="fa fa-angle-down fa-lg"></i>
                         </div>
 
                         <div class="select-dropdown">
-                            <select name="year" id="year" onchange="" size="1">
-                                <option value="01" selected="selected">2016</option>
-                                <option value="02">2017</option>
-                                <option value="03">2018</option>
-                                <option value="04">2019</option>
-                                <option value="05">2020</option>
-                                <option value="06">2021</option>
-                                <option value="07">2022</option>
-                                <option value="08">2023</option>
-                                <option value="09">2024</option>
-                                <option value="10">2025</option>
-                                <option value="11">2026</option>
-                                <option value="12">2027</option>
-                                <option value="12">2028</option>
-                                <option value="12">2029</option>
-                                <option value="12">2030</option>
-                                <option value="12">2031</option>
+                            <select name="year" id="select-year" onchange="" size="1">
+                                <option value="2016" selected="selected">2016</option>
+                                <option value="2017" selected="selected">2017</option>
+                                <option value="2018">2018</option>
+                                <option value="2019">2019</option>
+                                <option value="2020">2020</option>
+                                <option value="2021">2021</option>
+                                <option value="2022">2022</option>
+                                <option value="2023">2023</option>
+                                <option value="2024">2024</option>
+                                <option value="2025">2025</option>
+                                <option value="2026">2026</option>
+                                <option value="2027">2027</option>
+                                <option value="2028">2028</option>
+                                <option value="2029">2029</option>
+                                <option value="2030">2030</option>
+                                <option value="2031">2031</option>
                             </select>
                             <i class="fa fa-angle-down fa-lg"></i>
                          </div>
